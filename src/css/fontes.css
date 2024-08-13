@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Kairos Sans W06 Cond Medium";
+    src: url("https://db.onlinewebfonts.com/t/e7add10b4df03aa3a185e193221d8900.eot");
+    src: url("https://db.onlinewebfonts.com/t/e7add10b4df03aa3a185e193221d8900.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/e7add10b4df03aa3a185e193221d8900.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/e7add10b4df03aa3a185e193221d8900.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/e7add10b4df03aa3a185e193221d8900.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/e7add10b4df03aa3a185e193221d8900.svg#Kairos Sans W06 Cond Medium")format("svg");
+}

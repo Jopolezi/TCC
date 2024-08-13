@@ -1,0 +1,66 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar-se</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./src/css/registro.css">
+
+    <!-- Ícone do Site-->
+    <link rel="shortcut icon" href="./src/img/logo_gc.png" type="image/x-icon">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="./src/css/fontawesome/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="card">
+
+        <div class="btn-voltar">
+            <a href="login.html"><i class="fa-solid fa-left-long"></i></a>
+        </div>
+
+        <div class="text-register">
+            <h1>Registrar-se</h1>
+        </div>
+
+        <form id="form" method="post" action="validacao.php">
+
+            <input type="text" id="nome" class="required" placeholder="Nome">
+            <span class="escondido">O nome precisa ter no mínimo 8 letras.</span> 
+            
+            <input type="email" id="email" class="required" placeholder="Email">
+            <span class="escondido">O email precisa ser compatível.</span> 
+            
+            <input type="password" id="senha" class="required" placeholder="Senha">
+            <span class="escondido">A senha deve ter entre 6 e 12 dígitos. Contendo números e ao menos uma letra maiúscula</span>  
+            
+            <input type="password" id="rSenha" class="required" placeholder="Repetir Senha">
+            <span class="escondido">As senhas precisam ser iguais.</span>
+            
+            <input class="btn-register" type="submit" id="regis" value="Registrar">
+
+            <div class="remember-login">
+            <p>Já tem uma conta? <a href="login.html">Entre aqui!</a></p>
+            </div>
+        </form>
+
+        <?php include ("validacao.php");?>
+
+        <script src="./src/js/registro.js"></script>
+        
+    </div>
+
+    
+</body>
+</html>
+
+<!--
+    
+
+    -->

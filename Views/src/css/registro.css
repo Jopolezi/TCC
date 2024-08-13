@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+.escondido{
+    color: #ff000f;
+     font-size: 12px;
+     margin-top: 2px;
+     display: none;
+     text-align: center;
+ }
+ 
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    background: url(../img/pixel.gif);
+    backdrop-filter: blur(5px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+*{
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+    --color: #fff;
+    --color-card: #272727;
+    --color-btn-card: #461e78;
+}
+
+
+/* --- */
+
+.card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 420px;
+    height: 540px;
+    border: 5px solid var(--color-btn-card);
+    border-radius: 10px;
+    background: var(--color-card);
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.449) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.285) 0px 18px 36px -18px inset;
+}
+
+.btn-voltar a{
+    display: inline-block;
+    position: absolute;
+    background: var(--color-btn-card);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 0.55s ease;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+}
+
+.btn-voltar a:hover {
+    transform: scale(1.1);
+}
+
+.card .text-register {
+    color: var(--color);
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;  
+    margin-top: 10px; 
+    top: 0px;
+    position: absolute;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    padding: 10px 35px;
+    margin: 20px 0px 0px 0px;
+    border: 3px solid var(--color-btn-card);
+    border-radius: 10px;
+    background: var(--color-card);
+    box-shadow: rgba(0, 0, 0, 0.449) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.285) 0px 18px 36px -18px inset;
+    color: var(--color);
+}
+
+.btn-register {
+    position: absolute;
+    bottom: 50px;
+    color: var(--color);
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    transition: all 0.55s ease;
+}
+
+.btn-register:hover {
+    transform: scale(1.1);
+}
+
+.remember-login{
+    position: absolute;
+    display: inline-block;
+    font-size: 15px;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    color: var(--color);
+    bottom: -10px;
+    
+}
+
+.remember-login a{
+    color: var(--color-btn-card);
+    font-weight: 700;
+    text-decoration: underline 2px;
+}
+
+
+
+
