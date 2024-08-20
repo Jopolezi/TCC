@@ -199,7 +199,7 @@
                 <h1>Leonardo Amato Sander Silva</h1>
 
                 <p>É o responsável pela gestão do projeto, coordena o
-                    desenvolvimento do TCC e também o design do mapa do jogo. Para o seu futuro, pretende cursar ADS
+                    desenvolvimento do TCC e também o design do mapa do jogo. Também auxilia o Gabriel no desenvolvimento do jogo. Para o seu futuro, pretende cursar ADS
                     na Fatec de Taquaritinga. Para a carreira, pretende seguir como Analista de Dados.
                 </p>
 
@@ -220,7 +220,7 @@
                 <h1>Valentino Amato Sander Silva</h1>
 
                 <p>É responsável pela parte ilustrativa do TCC, sendo o
-                    principal criador de artes do jogo e do projeto. Para o seu futuro, pretende cursar ADS na Fatec
+                    principal criador de artes do jogo e do projeto. Além de auxiliar no desenvolvimento de enredo. Para o seu futuro, pretende cursar ADS na Fatec
                     de Taquaritinga. Para a carreira, pretende seguir como Analista de Dados.
                 </p>
 
@@ -241,10 +241,41 @@
 
     </section>
 
-
-
     <section class="projeto" id="projeto">
 
+        <div class="flex">
+            <div class="project__description">
+                <div class="project__text"> 
+                    <h1>A Criação de Vallirum</h1>
+
+                    <p>O desenvolvimento de Vallirum começou com uma ideia simples: criar um mundo medieval cheio de mistério, aventura e fantasia. O jogo foi projetado para transportar os jogadores para um universo onde eles podem explorar reinos perdidos, enfrentar criaturas míticas e participar de uma narrativa rica e envolvente. Desde a concepção dos personagens até o design dos cenários, cada detalhe foi pensado para oferecer uma experiência imersiva e cativante.</p>
+                </div>
+
+                <div class="project__text">
+                    <h1>Mecânicas de Jogo</h1>
+
+                    <p>Vallirum se destaca pela sua jogabilidade desafiadora e equilibrada. Com mecânicas que misturam elementos de estratégia, combate em tempo real e resolução de puzzles, os jogadores são convidados a explorar o vasto mundo medieval enquanto tomam decisões que impactam diretamente o desenrolar da história. O sistema de combate foi projetado para ser dinâmico e envolvente, com ênfase no uso inteligente de habilidades e recursos disponíveis.</p> 
+                </div>
+
+                <div class="project__text">
+                    <h1>Arte e Estética</h1>
+
+                    <p>A estética de Vallirum é uma das suas características mais marcantes. Inspirada no período medieval e em mitologias antigas, a arte do jogo utiliza uma paleta de cores vibrantes e contrastantes, dando vida a castelos imponentes, florestas sombrias e cidades encantadas. Cada ambiente foi cuidadosamente projetado para proporcionar aos jogadores uma sensação de imersão completa, desde os detalhes dos trajes dos personagens até os efeitos visuais das magias.</p>
+                </div>
+
+                <div class="project__text texto4"> 
+                    <h1>A Jornada</h1>
+
+                    <p>Em Vallirum, a narrativa é um dos pilares centrais da experiência do jogador. A trama segue a jornada de heróis em um mundo à beira do colapso, onde escolhas morais e alianças podem mudar o curso da história. Com personagens complexos e bem desenvolvidos, a narrativa de Vallirum desafia os jogadores a refletirem sobre questões de poder, sacrifício e sobrevivência em um universo que mistura fantasia e realidade de maneira intrincada.</p>
+                </div>
+            </div>
+        
+            <div class="project__image">
+                <div class="imagem"><img src="../img/guerra.png" alt=""></div>
+                <div class="imagem2"><img src="../img/prota.jpg" alt=""></div>   
+                <div class="imagem"><img src="../img/guerra.png" alt=""></div>        
+            </div>
+        </div>
     </section>
 
     <section class="feedback" id="feedback">
@@ -253,15 +284,23 @@
         <div class="flex">
         <form action="">
 
-            <h1 class="feedback__titulo">Gostou do <span>PROJETO</span>?
-            Deixe seu <span>FEEDBACK</span>!</h1>
-
-            <div class="feedback__stars">
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
+            <div class="rating-system">
+                <h2>Deixe sua Avaliação</h2>
+                <div class="stars">
+                    <span class="fa-solid fa-star star" data-value="1"></span>
+                    <span class="fa-solid fa-star star" data-value="2"></span>
+                    <span class="fa-solid fa-star star" data-value="3"></span>
+                    <span class="fa-solid fa-star star" data-value="4"></span>
+                    <span class="fa-solid fa-star star" data-value="5"></span>
+                </div>
+                
+                <button type="button" id="submitRating">Enviar Avaliação</button>
+            </div>
+        
+bcvffbbfd
+            <div>
+                <h3>Média das Avaliações:</h3>
+                <label id="averageRatingLabel">Carregando...</label>
             </div>
 
             <!-- -->

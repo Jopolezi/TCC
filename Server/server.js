@@ -1,131 +1,69 @@
-require('dotenv').config();
 const express = require('express');
+const bodyParser = require('body-parser');
+const { Pool } = require('pg');
 const cors = require('cors');
-const db = require('./db');
-const path = require('path');
+
 const app = express();
-const fs = require('fs');
+const port = 3000;
 
-const uploadImgUser = require('../src/js/uploadimage');
+// Configurando o middleware
+app.use(cors()); // Permite requisições de qualquer origem
+app.use(bodyParser.json()); // Faz o parse de JSON no corpo das requisições
 
-const port = process.env.PORT || 3000;
+// Configurando o pool do PostgreSQL
+const pool = new Pool({
+    user: 'postgres', // substitua pelo seu usuário do PostgreSQL
+    host: 'localhost',
+    database: 'ratings',
+    password: 'etec', // substitua pela senha do seu usuário do PostgreSQL
+    port: 5432, // Porta padrão do PostgreSQL
+});
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use(express.static(path.join(__dirname, "../src/Icons-Users")));
-
-app.post("/upload", uploadImgUser.single('file'), (req, res) => {
-    const { username } = req.body;
-    const file = req.file;
-
-    if (!username) {
-        console.error("Erro: Username não foi enviado na requisição");
-        return res.status(400).json({
-            erro: true,
-            message: "Erro: Username não foi enviado na requisição!"
-        });
+// Rota para testar a conexão com o banco de dados
+app.get('/api/test', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT NOW()');
+        res.status(200).json({ success: true, message: 'Conexão com o banco de dados funcionando!', time: result.rows[0].now });
+    } catch (err) {
+        console.error('Erro ao testar a conexão com o banco de dados', err);
+        res.status(500).json({ success: false, message: 'Erro ao conectar ao banco de dados', error: err.message });
     }
+});
 
-    if (!file) {
-        console.error("Erro: Nenhum arquivo foi enviado");
-        return res.status(400).json({
-            erro: true,
-            message: "Erro: Selecione uma imagem válida JPEG ou PNG!"
-        });
-    }
+// Rota para receber avaliações
+app.post('/api/ratings', async (req, res) => {
+    const { rating } = req.body;
 
     try {
-        // Renomeando o arquivo
-        const originalFileName = req.file.filename;
-        const extension = '.jpg';
-        const newFileName = `${username}${extension}`;
-
-        fs.renameSync(
-            path.join(__dirname, '../src/Icons-Users/', originalFileName),
-            path.join(__dirname, '../src/Icons-Users/', newFileName)
+        const result = await pool.query(
+            'INSERT INTO ratings (rating) VALUES ($1) RETURNING *',
+            [rating]
         );
 
-        console.log('File uploaded successfully');
-        return res.json({
-            erro: false,
-            message: "Upload realizado com sucesso!",
-        });
+        res.status(200).json(result.rows[0]);
     } catch (err) {
-        console.error('Erro ao renomear o arquivo:', err);
-        return res.status(500).json({
-            erro: true,
-            message: "Erro: Upload não realizado com sucesso!"
-        });
+        console.error('Erro ao salvar avaliação', err);
+        res.status(500).send('Erro ao salvar avaliação');
     }
 });
 
-
-
-app.get('/', (req, res) => {
-    res.json({ message: 'funcionando!' });
-});
-
-app.post('/login', async (req, res) => {
-    const { username, senha } = req.body;
-
+// Rota para calcular a média das avaliações
+app.get('/api/ratings/average', async (req, res) => {
     try {
-        const usuario = await db.selectUsuarioPorNome(username);
-        console.log('Usuário encontrado:', usuario);
+        const result = await pool.query('SELECT AVG(rating) AS average_rating FROM ratings');
+        let averageRating = result.rows[0].average_rating;
+        
+        // Verifica se averageRating é null e define como 0 se for o caso
+        averageRating = averageRating === null ? 0 : parseFloat(averageRating);
 
-        let userRes = false;
-        let senhaRes = false;
-        let NameUsuario = null;
-
-        if (usuario) {
-            userRes = true;
-        } else {
-            userRes = false;
-        }
-
-        if (usuario && usuario.senha === senha) {
-            senhaRes = true;
-            NameUsuario = usuario.username;
-        } else {
-            senhaRes = false;
-        }
-
-        res.json({ User: userRes, senha: senhaRes, Name: NameUsuario });
-
-    } catch (error) {
-        console.error('Erro ao fazer login:', error);
-        res.status(500).json({ error: 'Erro ao fazer login' });
-    }
-});
-
-app.post('/register', async (req, res) => {
-    const { username, email, senha } = req.body;
-    try {
-        const usuario = await db.selectUsuarioPorNome(username);
-        const usuarioPorEmail = await db.selectUsuarioPorEmail(email);
-        let UserExist = false;
-        let EmailExist = false;
-
-        if (usuario) {
-            UserExist = true;
-        }
-        if (usuarioPorEmail) {
-            EmailExist = true;
-        }
-
-        if (!UserExist && !EmailExist) {
-            await db.insertUsuario(username, email, senha);
-        }
-
-        res.json({ User: UserExist, Email: EmailExist });
-
-    } catch (error) {
-        console.error('Erro ao fazer registro:', error);
-        res.status(500).json({ error: 'Erro ao fazer registro' });
+        res.status(200).json({ averageRating });
+    } catch (err) {
+        console.error('Erro ao calcular a média das avaliações', err);
+        res.status(500).json({ success: false, message: 'Erro ao calcular a média das avaliações', error: err.message });
     }
 });
 
 app.listen(port, () => {
-    console.log(`Backend rodando na porta ${port}`);
+    console.log(`Servidor rodando em http://localhost:${port}`);
 });
+//funcionando
