@@ -31,10 +31,12 @@
     <!-- ICON -->
     <link rel="shortcut icon" href="../img/logo_gc.png" type="image/x-icon">
 
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
 </head>
 
 <body>
-
     <header id="header">
         <div class="logo">
             <img src="../img/logo_gc.png" alt="Logo GC">
@@ -93,7 +95,7 @@
 
     <section class="sobre-nos" id="sobre-nos">
 
-        <div class="flex"> <!-- Gabriel -->
+        <div class="flex" id="reveal-1"> <!-- Gabriel -->
 
             <div class="img-centro-mobile">
                 <img src="../img/perfil_gabriel.jpg" alt="">
@@ -125,7 +127,7 @@
 
         </div>
 
-        <div class="flex"> <!-- Gustavo -->
+        <div class="flex" id="reveal-2"> <!-- Gustavo -->
 
             <div class="img-centro-mobile">
                 <img src="../img/perfil_gustavo.jpg" alt="">
@@ -156,7 +158,7 @@
 
         </div>
 
-        <div class="flex"> <!-- Giovana -->
+        <div class="flex" id="reveal-1"> <!-- Giovana -->
 
             <div class="img-centro-mobile">
                 <img src="../img/perfil_nobre.jpg" alt="">
@@ -186,7 +188,7 @@
 
         </div>
 
-        <div class="flex"> <!-- João P. -->
+        <div class="flex" id="reveal-2"> <!-- João P. -->
 
             <div class="img-centro-mobile">
                 <img src="../img/perfil.png" alt="">
@@ -217,7 +219,7 @@
 
         </div>
 
-        <div class="flex"> <!-- Leonardo -->
+        <div class="flex" id="reveal-1"> <!-- Leonardo -->
 
             <div class="imagem-esq">
                 <img src="../img/perfil_leo.jpg" alt="Imagem-3">
@@ -248,7 +250,7 @@
 
         </div>
 
-        <div class="flex"> <!-- Valentino -->
+        <div class="flex" id="reveal-2"> <!-- Valentino -->
 
             <div class="img-centro-mobile">
                 <img src="../img/perfil_vale.jpg" alt="">
@@ -331,11 +333,12 @@
                 </div>
 
                 <div class="btn-download">
-                    <a href="#" download>
-                        <button>
-                            Faça o Download
-                        </button>
+                    <a href="../executavel/Jogo/Jogo/" id="download-link" download>
+                        <button id="download-btn">Faça o Download</button>
                     </a>
+                    <p id="not-available-message" style="display: none;">
+                        Download não disponível nesta plataforma. <i class="fa-solid fa-circle-exclamation"></i>
+                    </p>
                 </div>
             </div>
 
@@ -350,34 +353,16 @@
 
     <section class="feedback" id="feedback">
 
+        <div id="card-feedback">
+            <div class="img-card-feedback">    
 
-        <div class="flex">
-            <form action="">
+            </div>
 
-                <div class="rating-system">
-                    <h2>Deixe sua Avaliação</h2>
-                    <div class="stars">
-                        <span class="fa-solid fa-star star" data-value="1"></span>
-                        <span class="fa-solid fa-star star" data-value="2"></span>
-                        <span class="fa-solid fa-star star" data-value="3"></span>
-                        <span class="fa-solid fa-star star" data-value="4"></span>
-                        <span class="fa-solid fa-star star" data-value="5"></span>
-                    </div>
-
-                    <button type="button" id="submitRating">Enviar Avaliação</button>
+            <div class="content-card-feedback">
+                <div class="text-card-feedback">
+                    <h1>Sistema <span>de avaliação</span>.</h1>
                 </div>
-                <div>
-                    <h3>Média das Avaliações:</h3>
-                    <label id="averageRatingLabel">Carregando...</label>
-                </div>
-
-                <!-- -->
-
-                <div class="feedback__btn">
-                    <input type="submit" value="Enviar">
-                </div>
-            </form>
-
+            </div>
         </div>
 
     </section>
