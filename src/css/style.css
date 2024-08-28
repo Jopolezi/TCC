@@ -411,7 +411,6 @@ section.projeto {
     box-shadow: 0px 0px 43px 3px rgba(95,9,192,0.62);
 }
 
-
 #card button:hover {
     border: 2px solid var(--white);
     cursor: pointer;
@@ -482,6 +481,81 @@ section.feedback{
     background: rgb(0, 0, 0);
     background: linear-gradient(270deg, var(--main) 5%, rgba(0, 0, 0, 0.5) 40%, rgba(255, 255, 255, 0) 70%);
     pointer-events: none;
+}
+
+#card-feedback .content-card-feedback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2%;
+    width: 50%;
+    gap: 30px;
+}
+
+#card-feedback .content-card-feedback .text-card-feedback {
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    max-height: 500px;
+    padding: 2%;
+    padding: 4%;
+    border-radius: 10px;
+}
+
+#card-feedback .text-card-feedback h1 {
+    color: var(--white);
+    font-family: "New Amsterdam", sans-serif;
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#card-feedback .text-card-feedback span {
+    color: var(--purple);
+}
+
+#card-feedback .text-card-feedback p {
+    color: var(--whitesmoke);
+    font-size: 12px;
+    font-family: Poppins, sans-serif;
+}
+
+#card-feedback .content-card-feedback .estrelas-vazias {
+    color: var(--pink);
+    font-size: 58px;
+}
+
+#card-feedback .content-card-feedback .btn-enviar-feedback {
+    display: flex;
+    margin-top: 80px;
+}
+
+#card-feedback button {
+        background: none;
+        border: none;
+        color: var(--white);
+        font-size: 18px;
+        font-family: Poppins, sans-serif;
+        text-transform: uppercase;
+        padding: 10px;
+        background: var(--purple);
+        border: 2px solid transparent;
+        border-radius: 10px;
+        width: 200px;
+        transition: all 0.55s ease-in-out;
+        -webkit-box-shadow: 0px 0px 43px 3px rgba(95,9,192,0.62);
+        -moz-box-shadow: 0px 0px 43px 3px rgba(95,9,192,0.62);
+        box-shadow: 0px 0px 43px 3px rgba(95,9,192,0.62);
+}
+
+#card-feedback button:hover {
+    border: 2px solid var(--white);
+    cursor: pointer;
+}
+
+#card-feedback .btn-download button:hover{
+    cursor: pointer;
 }
 
 /* FOOTER */
