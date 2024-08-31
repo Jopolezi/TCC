@@ -165,6 +165,7 @@
         width: 40px;
         height: 40px;
     }
+
 }
 
 @media (max-width: 768px) {
@@ -190,7 +191,15 @@
         padding: 15px;
         border-radius: 10px;
     }
+    
+    #card-feedback {
+        width: 600px;
+    }
 
+    #card-feedback .content-card-feedback .estrelas-vazias {
+        color: var(--pink);
+        font-size: 38px;
+    }
 }
 
 @media (max-width: 720px) {
@@ -290,5 +299,13 @@
     .sobre-nos .flex .img-centro-mobile img{
         width: 320px;
         height: 320px;
+    }
+
+    #card-feedback {
+        width: 450px;
+    }
+
+    #card-feedback .content-card-feedback .estrelas-vazias {
+        font-size: 28px;
     }
 }
