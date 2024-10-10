@@ -323,7 +323,6 @@ section.projeto {
     word-wrap: break-word; 
     white-space: normal; 
     background: transparent;
-    padding: 4%;
     border: 3px solid var(--purple2);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
@@ -520,18 +519,14 @@ section.feedback{
     font-size: 12px;
     font-family: Poppins, sans-serif;
 }
-
-#card-feedback .content-card-feedback .estrelas-vazias {
-    color: var(--pink);
-    font-size: 58px;
-}
-
 #card-feedback .content-card-feedback .btn-enviar-feedback {
     display: flex;
-    margin-top: 80px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
 }
 
-#card-feedback button {
+#card-feedback .btn-enviar-feedback button{
         background: none;
         border: none;
         color: var(--white);
@@ -556,6 +551,38 @@ section.feedback{
 
 #card-feedback .btn-download button:hover{
     cursor: pointer;
+}
+
+.feedbackstars i {
+    margin-top: 50px;
+    gap: 10px;
+    font-size: 58px;
+    cursor: pointer;
+    color: var(--whitesmoke);
+    transition: color 0.3s ease; 
+    display: inline-block;
+}
+
+.feedbackstars i:hover,
+.feedbackstars i:hover ~ i {
+    color: var(--whitesmoke);
+}
+
+.feedbackstars i:hover,
+.feedbackstars i:hover ~ i {
+    color: var(--pink); 
+}
+
+.feedbackstars i.selected,
+.feedbackstars i.selected ~ i {
+    color: var(--pink); 
+}
+
+.feedback-media {
+    font-size: 18px;
+    font-family: Oswald, sans-serif;
+    text-transform: uppercase;
+    margin-top: 15px;
 }
 
 /* FOOTER */
@@ -627,8 +654,3 @@ footer .content-footer .contato-footer i{
 footer .content-footer .contato-footer a:hover{
     transform: scale(1.1);
 }
-
-
-
-
-

@@ -363,21 +363,21 @@
                     <h1>Sistema <span>de avaliação</span>.</h1>
 
                     <p>Caso tenha gostado do projeto, avalie-o de 0 à 5 estrelas</p>
-                </div>
-
-                <div class="estrelas-vazias">
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                </div>
+                    <div class="feedbackstars">
+                        <i class="fa-solid fa-star star" data-value="1"></i>
+                        <i class="fa-solid fa-star star" data-value="2"></i>
+                        <i class="fa-solid fa-star star" data-value="3"></i>
+                        <i class="fa-solid fa-star star" data-value="4"></i>
+                        <i class="fa-solid fa-star star" data-value="5"></i>
+                    </div>
+                    
 
                 <div class="btn-enviar-feedback">
                     <a href="#">
-                        <button>Envie a sua nota</button>
+                        <button id="submitRating" onclick="">Envie a sua nota</button>
                     </a>
                 </div>
+                <div id="averageRatingLabel" class="feedback-media">Média das Avaliações: </div>
             </div>
         </div>
 

@@ -166,6 +166,13 @@
         height: 40px;
     }
 
+    #card-feedback {
+        margin: 0 2%;
+    }
+    
+    #card-feedback .feedbackstars i{
+        font-size: 48px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -192,14 +199,6 @@
         border-radius: 10px;
     }
     
-    #card-feedback {
-        width: 600px;
-    }
-
-    #card-feedback .content-card-feedback .estrelas-vazias {
-        color: var(--pink);
-        font-size: 38px;
-    }
 }
 
 @media (max-width: 720px) {
@@ -216,6 +215,10 @@
         width: 400px;
         height: 400px;
         border: 5px solid var(--pink);
+    }
+
+    #card-feedback .feedbackstars i{
+        font-size: 38px;
     }
 }
 
@@ -255,6 +258,10 @@
 
     .sobre-nos .flex .textos-sobre-nos p {
         font-size: 18px;
+    }
+
+    #card-feedback .feedbackstars i{
+        font-size: 32px;
     }
     
 }
@@ -301,11 +308,46 @@
         height: 320px;
     }
 
-    #card-feedback {
-        width: 450px;
+    #card button {
+        width: 150px;
     }
 
-    #card-feedback .content-card-feedback .estrelas-vazias {
-        font-size: 28px;
+    #card .text-card h1 {
+        font-size: 26px;
+    }
+
+    #card .text-card p {
+        font-size: 14px;
+        text-align:justify;
+    }
+
+    .flex .redes-sociais {
+        display: flex;
+        gap: none;
+    }
+
+    .sobre-nos .flex .textos-sobre-nos .redes-sociais a{
+        font-size: 18px;
+    }
+
+    #card-feedback {
+        width: 460px;
+    }
+
+    #card-feedback .btn-enviar-feedback button{ 
+        width: 150px;
+        font-size: 14px;
+    }
+
+    #card-feedback .feedbackstars i{
+        font-size: 24px;
+    }
+
+    .feedback-media {
+        font-size: 16px;
+    }
+
+    footer {
+        display: none;
     }
 }
